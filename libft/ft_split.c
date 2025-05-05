@@ -38,7 +38,7 @@ int	count_strings(const char *src, char c)
 	return (count);
 }
 
-static void	*ft_free(char **strings)
+void	*ft_free(char **strings)
 {
 	int	i;
 
