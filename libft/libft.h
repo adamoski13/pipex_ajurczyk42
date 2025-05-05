@@ -53,5 +53,6 @@ char	*ft_strtrim(const char *src, const char *set);
 char	**ft_split(const char *src, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+void	*ft_free(char **strings);
 
 #endif
