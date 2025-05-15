@@ -6,7 +6,7 @@
 /*   By: ajurczyk <ajurczyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 17:37:56 by ajurczyk          #+#    #+#             */
-/*   Updated: 2025/05/05 16:03:42 by ajurczyk         ###   ########.fr       */
+/*   Updated: 2025/05/10 15:58:31 by ajurczyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,16 @@
 
 void	check_ac_av(int ac, char **av)
 {
-	int	i;
-
-	i = 0;
 	if (ac != 5)
 		exit(1);
-	while (av[2][i])
-		i++;
-	if (i == 0)
+	if (ft_strlen(av[2]) == 0)
 		exit(1);
-	i = 0;
-	while (av[3][i])
-		i++;
-	if (i == 0)
+	if (ft_strlen(av[3]) == 0)
 		exit(1);
+	if (open(av[1], O_RDWR) < 0)
+		wrong_file_av1(av[1]);
+	if (open(av[4], O_RDWR) < 0)
+		wrong_file_av2(av[4]);
 }
 
 int	check_command(char **ep, char *cmd)
