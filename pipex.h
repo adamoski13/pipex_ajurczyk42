@@ -6,7 +6,7 @@
 /*   By: ajurczyk <ajurczyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 17:03:00 by ajurczyk          #+#    #+#             */
-/*   Updated: 2025/05/05 16:03:45 by ajurczyk         ###   ########.fr       */
+/*   Updated: 2025/05/10 14:05:56 by ajurczyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int		open_file(char *file, int in_or_out);
 void	do_read(int *pipe1, char **av, char **envp);
 void	do_write(int *pipe1, char **av, char **envp);
 void	wrong_command(char *s);
-void	wrong_file(char *s);
+void	wrong_file_av1(char *s);
+void	wrong_file_av2(char *s);
 void	check_ac_av(int ac, char **av);
 int		check_command(char **ep, char *cmd);
 
