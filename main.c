@@ -6,7 +6,7 @@
 /*   By: ajurczyk <ajurczyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 16:56:41 by ajurczyk          #+#    #+#             */
-/*   Updated: 2025/05/05 16:04:10 by ajurczyk         ###   ########.fr       */
+/*   Updated: 2025/05/10 14:04:48 by ajurczyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@ int	main(int ac, char **av, char **ep)
 	int	pid;
 
 	check_ac_av(ac, av);
-	if (open(av[1], O_RDWR) < 0)
-		wrong_file(av[1]);
-	if (open(av[4], O_RDWR) < 0)
-		wrong_file(av[4]);
 	if (pipe(pipe1) == -1)
 		return (0);
 	pid = fork();
