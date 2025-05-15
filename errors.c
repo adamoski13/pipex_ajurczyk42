@@ -6,15 +6,15 @@
 /*   By: ajurczyk <ajurczyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 16:57:51 by ajurczyk          #+#    #+#             */
-/*   Updated: 2025/05/05 16:03:44 by ajurczyk         ###   ########.fr       */
+/*   Updated: 2025/05/10 16:32:51 by ajurczyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	wrong_file(char *s)
+void	wrong_file_av1(char *s)
 {
-	if (access(s, X_OK) != 0)
+	if (access(s, F_OK) == 0)
 	{
 		ft_putstr_fd("pipex: permission denied: ", STDERR_FILENO);
 		ft_putstr_fd(s, STDERR_FILENO);
@@ -23,6 +23,16 @@ void	wrong_file(char *s)
 	else
 	{
 		ft_putstr_fd("pipex: no such file or directory :", STDERR_FILENO);
+		ft_putstr_fd(s, STDERR_FILENO);
+		ft_putstr_fd("\n", STDERR_FILENO);
+	}
+}
+
+void	wrong_file_av2(char *s)
+{
+	if (access(s, F_OK) == 0)
+	{
+		ft_putstr_fd("pipex: permission denied: ", STDERR_FILENO);
 		ft_putstr_fd(s, STDERR_FILENO);
 		ft_putstr_fd("\n", STDERR_FILENO);
 	}
